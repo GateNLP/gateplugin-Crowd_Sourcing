@@ -16,6 +16,9 @@
 	<groupId>uk.ac.gate.plugins</groupId>
 	<artifactId>crowd-sourcing</artifactId>
 	<version>8.5-SNAPSHOT</version>
+	
+	<name>Crowd Sourcing</name>
+	<description>GATE plugin to interface with the CrowdFlower crowd sourcing platform</description>
 
 	<licenses>
 		<license>
