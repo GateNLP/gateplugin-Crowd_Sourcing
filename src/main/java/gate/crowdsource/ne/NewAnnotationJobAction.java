@@ -45,9 +45,9 @@ public class NewAnnotationJobAction extends AbstractAction {
   private EntityAnnotationJobBuilder jobBuilder;
   
   public NewAnnotationJobAction(EntityAnnotationJobBuilder jobBuilder) {
-    super("Create a new CrowdFlower job");
+    super("Create a new Figure Eight job");
     putValue(SHORT_DESCRIPTION,
-            "Create a new job on CrowdFlower to be populated by this PR");
+            "Create a new job on Figure Eight to be populated by this PR");
     this.jobBuilder = jobBuilder;
   }
 
@@ -94,7 +94,7 @@ public class NewAnnotationJobAction extends AbstractAction {
                 new Thread(new Runnable() {
                   public void run() {
                     try {
-                      MainFrame.lockGUI("Creating CrowdFlower job");
+                      MainFrame.lockGUI("Creating Figure Eight job");
                       try {
                         jobBuilder.setJobId(jobBuilder.crowdFlowerClient.createAnnotationJob(
                                 panel.m_title.getText().trim(),
@@ -120,7 +120,7 @@ public class NewAnnotationJobAction extends AbstractAction {
                       SwingUtilities.invokeLater(new Runnable() {
                         public void run() {
                           JOptionPane.showMessageDialog(dialog,
-                                  "Error creating the crowdflower job, see the messages pane for details",
+                                  "Error creating the Figure Eight job, see the messages pane for details",
                                   "Error creating job",
                                   JOptionPane.ERROR_MESSAGE);
                           dialog.setVisible(true);

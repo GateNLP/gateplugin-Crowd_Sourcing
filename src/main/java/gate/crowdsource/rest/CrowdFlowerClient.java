@@ -50,7 +50,7 @@ public class CrowdFlowerClient {
 
   private static final Logger log = Logger.getLogger(CrowdFlowerClient.class);
 
-  public static final String CF_ENDPOINT = "https://api.crowdflower.com/v1";
+  public static final String CF_ENDPOINT = "https://api.figure-eight.com/v1";
 
   private String apiKey;
   
@@ -144,16 +144,16 @@ public class CrowdFlowerClient {
 
     log.debug("cml: " + cml.toString());
 
-    log.debug("POSTing to CrowdFlower");
+    log.debug("POSTing to Figure Eight");
     JsonNode json =
             post("/jobs", "job[title]", title, "job[instructions]",
                     instructions, "job[cml]", cml.toString(), "job[css]", css,
                     "job[js]", js.toString());
-    log.debug("CrowdFlower returned " + json);
-    if(json.has("id") && json.get("id").isLong()) {
+    log.debug("Figure Eight returned " + json);
+    if(json.has("id") && json.get("id").canConvertToLong()) {
       return json.get("id").asLong();
     } else {
-      throw new GateRuntimeException("Failed to create CF job");
+      throw new GateRuntimeException("Failed to create FE job");
     }
   }
 
@@ -354,7 +354,7 @@ public class CrowdFlowerClient {
 
     try {
       JsonNode json = post("/jobs/" + jobId + "/units", formData);
-      if(json.has("id") && json.get("id").isLong()) {
+      if(json.has("id") && json.get("id").canConvertToLong()) {
         long unitId = json.get("id").asLong();
         // store the unit ID on the annotation
         target.getFeatures().put(UNIT_ID_FEATURE_NAME, Long.valueOf(unitId));
@@ -484,16 +484,16 @@ public class CrowdFlowerClient {
     }
     log.debug("cml: " + cml.toString());
 
-    log.debug("POSTing to CrowdFlower");
+    log.debug("POSTing to Figure Eight");
     JsonNode json =
             post("/jobs", "job[title]", title, "job[instructions]",
                     instructions, "job[cml]", cml.toString(), "job[css]", css,
                     "job[js]", js.toString());
-    log.debug("CrowdFlower returned " + json);
-    if(json.has("id") && json.get("id").isLong()) {
+    log.debug("Figure Eight returned " + json);
+    if(json.has("id") && json.get("id").canConvertToLong()) {
       return json.get("id").asLong();
     } else {
-      throw new GateRuntimeException("Failed to create CF job");
+      throw new GateRuntimeException("Failed to create FE job");
     }
   }
 
@@ -632,7 +632,7 @@ public class CrowdFlowerClient {
 
     try {
       JsonNode json = post("/jobs/" + jobId + "/units", formData);
-      if(json.has("id") && json.get("id").isLong()) {
+      if(json.has("id") && json.get("id").canConvertToLong()) {
         long unitId = json.get("id").asLong();
         return unitId;
       } else {

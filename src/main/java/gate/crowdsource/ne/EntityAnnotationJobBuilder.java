@@ -33,7 +33,7 @@ import java.util.List;
 
 import javax.swing.Action;
 
-@CreoleResource(name = "Entity Annotation Job Builder", comment = "Build a CrowdFlower job asking users to annotate entities "
+@CreoleResource(name = "Entity Annotation Job Builder", comment = "Build a Figure Eight job asking users to annotate entities "
         + "within a snippet of text", helpURL = "http://gate.ac.uk/userguide/sec:crowd:annotation")
 public class EntityAnnotationJobBuilder extends AbstractLanguageAnalyser
                                                                         implements
@@ -75,7 +75,7 @@ public class EntityAnnotationJobBuilder extends AbstractLanguageAnalyser
     return apiKey;
   }
 
-  @CreoleParameter(comment = "CrowdFlower API key")
+  @CreoleParameter(comment = "Figure Eight API key")
   public void setApiKey(String apiKey) {
     this.apiKey = apiKey;
   }
@@ -96,7 +96,7 @@ public class EntityAnnotationJobBuilder extends AbstractLanguageAnalyser
 
   @RunTime
   @CreoleParameter(defaultValue = "Sentence", comment = "Annotation type for the \"snippet\" annotations.  "
-          + "One snippet = one CrowdFlower unit")
+          + "One snippet = one Figure Eight unit")
   public void setSnippetAnnotationType(String contextAnnotationType) {
     this.snippetAnnotationType = contextAnnotationType;
   }
@@ -265,7 +265,7 @@ public class EntityAnnotationJobBuilder extends AbstractLanguageAnalyser
                       entityAnnotationType);
 
       List<Annotation> allSnippets = Utils.inDocumentOrder(snippetAnnotations);
-      fireStatusChanged("Creating CrowdFlower units for " + allSnippets.size()
+      fireStatusChanged("Creating Figure Eight units for " + allSnippets.size()
               + " " + snippetAnnotationType + " annotations for "
               + entityAnnotationType + " annotation task");
 

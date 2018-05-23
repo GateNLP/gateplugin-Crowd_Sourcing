@@ -18,7 +18,7 @@
 	<version>8.5-SNAPSHOT</version>
 	
 	<name>Crowd Sourcing</name>
-	<description>GATE plugin to interface with the CrowdFlower crowd sourcing platform</description>
+	<description>GATE plugin to interface with the Figure Eight crowd sourcing platform</description>
 
 	<licenses>
 		<license>

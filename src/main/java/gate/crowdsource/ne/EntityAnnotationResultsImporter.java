@@ -39,7 +39,7 @@ import gate.crowdsource.rest.CrowdFlowerClient;
 import gate.util.InvalidOffsetException;
 
 @CreoleResource(name = "Entity Annotation Results Importer",
-comment = "Import judgments from a CrowdFlower job created by "
+comment = "Import judgments from a Figure Eight job created by "
         + "the Entity Annotation Job Builder as GATE annotations.",
 helpURL = "http://gate.ac.uk/userguide/sec:crowd:annotation:import")
 public class EntityAnnotationResultsImporter
@@ -75,7 +75,7 @@ public class EntityAnnotationResultsImporter
     return apiKey;
   }
 
-  @CreoleParameter(comment = "CrowdFlower API key")
+  @CreoleParameter(comment = "Figure Eight API key")
   public void setApiKey(String apiKey) {
     this.apiKey = apiKey;
   }

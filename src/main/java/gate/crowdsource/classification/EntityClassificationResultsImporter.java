@@ -35,7 +35,7 @@ import gate.creole.metadata.RunTime;
 import gate.crowdsource.rest.CrowdFlowerClient;
 
 @CreoleResource(name = "Entity Classification Results Importer",
-    comment = "Import judgments from a CrowdFlower job created by "
+    comment = "Import judgments from a Figure Eight job created by "
             + "the Entity Classification Job Builder as GATE annotations.",
     helpURL = "http://gate.ac.uk/userguide/sec:crowd:classification:import")
 public class EntityClassificationResultsImporter
@@ -67,7 +67,7 @@ public class EntityClassificationResultsImporter
     return apiKey;
   }
 
-  @CreoleParameter(comment = "CrowdFlower API key")
+  @CreoleParameter(comment = "Figure Eight API key")
   public void setApiKey(String apiKey) {
     this.apiKey = apiKey;
   }

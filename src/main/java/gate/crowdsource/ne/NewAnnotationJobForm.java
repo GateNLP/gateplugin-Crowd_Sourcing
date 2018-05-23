@@ -140,7 +140,7 @@ public class NewAnnotationJobForm extends JPanel
       jpanel1.add(m_titleLabel,new CellConstraints(2,3,1,1,CellConstraints.RIGHT,CellConstraints.DEFAULT));
 
       m_title.setName("title");
-      m_title.setToolTipText("The title of the CrowdFlower job.");
+      m_title.setToolTipText("The title of the Figure Eight job.");
       jpanel1.add(m_title,cc.xy(4,3));
 
       m_instructionsLabel.setName("instructionsLabel");

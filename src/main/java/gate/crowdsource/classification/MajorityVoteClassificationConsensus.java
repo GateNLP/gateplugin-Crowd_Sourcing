@@ -113,7 +113,7 @@ public class MajorityVoteClassificationConsensus
 
   @Optional
   @RunTime
-  @CreoleParameter(comment = "Annotation set containing the original entity annotations that were imported to form CrowdFlower units")
+  @CreoleParameter(comment = "Annotation set containing the original entity annotations that were imported to form Figure Eight units")
   public void setOriginalEntityASName(String originalEntityASName) {
     this.originalEntityASName = originalEntityASName;
   }
@@ -123,7 +123,7 @@ public class MajorityVoteClassificationConsensus
   }
 
   @RunTime
-  @CreoleParameter(comment = "Type of the original entity annotations that were imported to form CrowdFlower units.", defaultValue = "Mention")
+  @CreoleParameter(comment = "Type of the original entity annotations that were imported to form Figure Eight units.", defaultValue = "Mention")
   public void setEntityAnnotationType(String entityAnnotationType) {
     this.entityAnnotationType = entityAnnotationType;
   }

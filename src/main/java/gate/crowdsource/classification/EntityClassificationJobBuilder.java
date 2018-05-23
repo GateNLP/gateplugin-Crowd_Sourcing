@@ -40,7 +40,7 @@ import static gate.crowdsource.CrowdFlowerConstants.UNIT_ID_FEATURE_NAME;
 
 import org.apache.log4j.Logger;
 
-@CreoleResource(name = "Entity Classification Job Builder", comment = "Build a CrowdFlower job asking users to select the right label for entities", helpURL = "http://gate.ac.uk/userguide/sec:crowd:classification")
+@CreoleResource(name = "Entity Classification Job Builder", comment = "Build a Figure Eight job asking users to select the right label for entities", helpURL = "http://gate.ac.uk/userguide/sec:crowd:classification")
 public class EntityClassificationJobBuilder extends AbstractLanguageAnalyser
                                                                             implements
                                                                             ActionsPublisher {
@@ -70,7 +70,7 @@ public class EntityClassificationJobBuilder extends AbstractLanguageAnalyser
     return apiKey;
   }
 
-  @CreoleParameter(comment = "CrowdFlower API key")
+  @CreoleParameter(comment = "Figure Eight API key")
   public void setApiKey(String apiKey) {
     this.apiKey = apiKey;
   }
@@ -164,7 +164,7 @@ public class EntityClassificationJobBuilder extends AbstractLanguageAnalyser
 
       List<Annotation> allEntities =
               Utils.inDocumentOrder(entityAS.get(entityAnnotationType));
-      fireStatusChanged("Creating CrowdFlower units for " + allEntities.size()
+      fireStatusChanged("Creating Figure Eight units for " + allEntities.size()
               + " " + entityAnnotationType
               + " annotations for classification task ");
 
